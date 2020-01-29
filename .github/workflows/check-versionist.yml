@@ -18,4 +18,5 @@ jobs:
     - name: Start resin-commit-lint
       run: |
         commit=$(git show $(git rev-parse --verify HEAD) -s --format=%B)
+        echo "${commit}"
         resin-commit-lint "${commit}" -c ../config.json
