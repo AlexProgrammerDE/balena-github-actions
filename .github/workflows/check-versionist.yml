@@ -8,6 +8,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
     - name: Install resin-commit-lint and download config
       run: |
         sudo npm install -g resin-commit-linter
